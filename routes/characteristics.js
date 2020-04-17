@@ -65,7 +65,10 @@ router.get('/:quantity',(req,res,next) => {
     'tsundere',
     'gal',
     'órfão', 'Banana'];
+    const originArray = ['da escola','da rua','da bunda','do comunismo'];
+
     var characteristicsChoosed = [];
+    var originString = '';
 
     const quantity = (req.params.quantity <= characteristicsArray.length) ? req.params.quantity : characteristicsArray.length;
 
@@ -75,7 +78,7 @@ router.get('/:quantity',(req,res,next) => {
             mensagem: 'This operation does not accept zero as params'
         });
     }else{
-
+        originString = originArray[getRandomInt(originArray.length)];
         for (let i = 0; i < quantity; i++) {
             let char = characteristicsArray[getRandomInt(characteristicsArray.length)];
             if (characteristicsChoosed.includes(char)){
@@ -88,7 +91,7 @@ router.get('/:quantity',(req,res,next) => {
         res.status(200).send({
          //   mensagem: 'Get by quantity',
             characteristics: characteristicsChoosed,
-            origin: 'da escola'
+            origin: originString
         });
     }
 });
