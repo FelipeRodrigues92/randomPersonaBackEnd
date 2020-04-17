@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 
-const rotaCharacteristics = require('./routes/characteristics');
+const rotaCharacteristics = require('./routes/traits');
 
-app.use('/characteristics', rotaCharacteristics);
+app.use('/traits', rotaCharacteristics);
 
 app.use((req,res,next) => {
     res.status(404).send({
