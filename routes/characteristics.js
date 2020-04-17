@@ -76,7 +76,7 @@ router.get('/:quantity',(req,res,next) => {
     }else{
 
         for (let i = 0; i < quantity; i++) {
-            arr2.push(characteristics[0]);// getRandomInt();
+            arr2.push(characteristics[getRandomInt(characteristics.length)]);
           }
 
         res.status(200).send({
