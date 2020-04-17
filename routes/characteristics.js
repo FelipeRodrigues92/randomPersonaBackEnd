@@ -65,7 +65,7 @@ router.get('/:quantity',(req,res,next) => {
     'tsundere',
     'gal',
     'órfão', 'Banana'];
-    var arr2 = [];
+    var characteristicsChoosed = [];
 
     const quantity = (req.params.quantity <= characteristicsArray.length) ? req.params.quantity : characteristicsArray.length;
 
@@ -78,16 +78,17 @@ router.get('/:quantity',(req,res,next) => {
 
         for (let i = 0; i < quantity; i++) {
             let char = characteristicsArray[getRandomInt(characteristicsArray.length)];
-            if (arr2.includes(char)){
+            if (characteristicsChoosed.includes(char)){
                 i--;
             }else{
-                arr2.push(char);
+                characteristicsChoosed.push(char);
             }
           }
 
         res.status(200).send({
             mensagem: 'Get by quantity',
-            quantityValue: arr2
+            characteristics: characteristicsChoosed,
+            returnCounter: quantity
         });
     }
 });
