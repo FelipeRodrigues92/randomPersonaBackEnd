@@ -90,7 +90,7 @@ router.get('/:quantity',(req,res,next) => {
 
         res.status(200).send({
          //   mensagem: 'Get by quantity',
-            trait: characteristicsChoosed,
+            traits: characteristicsChoosed,
             origin: originString
         });
     }
