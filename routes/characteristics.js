@@ -65,7 +65,7 @@ router.get('/:quantity',(req,res,next) => {
     'tsundere',
     'gal',
     'órfão', 'Banana'];
-    const originArray = ['da escola','da rua','da bunda','do comunismo'];
+    const originArray = ['da escola','da rua','da quebrada','do comunismo'];
 
     var characteristicsChoosed = [];
     var originString = '';
