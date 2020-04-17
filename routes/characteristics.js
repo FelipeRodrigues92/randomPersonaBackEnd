@@ -8,7 +8,7 @@ router.get('/',(req, res, next) => {
 });
 
 router.get('/:quantity',(req,res,next) => {
-    let characteristics = ['samurai',
+    let characteristicsArray = ['samurai',
     'ninja',
     'mago',
     'exorcista',
@@ -67,7 +67,8 @@ router.get('/:quantity',(req,res,next) => {
     'órfão', 'Banana'];
     var arr2 = [];
 
-    const quantity = req.params.quantity;
+    const quantity = (req.params.quantity <= characteristicsArray.length) ? req.params.quantity : characteristicsArray.length;
+
 
     if(quantity <= 0 ){
         res.status(406).send({
@@ -76,7 +77,7 @@ router.get('/:quantity',(req,res,next) => {
     }else{
 
         for (let i = 0; i < quantity; i++) {
-            let char = characteristics[getRandomInt(characteristics.length)];
+            let char = characteristicsArray[getRandomInt(characteristicsArray.length)];
             if (arr2.includes(char)){
                 i--;
             }else{
