@@ -75,7 +75,7 @@ router.get('/:quantity',(req,res,next) => {
 
     if(quantity <= 0 ){
         res.status(406).send({
-            mensagem: 'This operation does not accept zero as params'
+            mensagem: 'This operation does not accept this params'
         });
     }else{
         originString = originArray[getRandomInt(originArray.length)];
