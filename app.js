@@ -9,7 +9,7 @@ app.use('/cardlist', rotaCardlist);
 
 app.use((req,res,next) => {
     res.status(404).send({
-        mensage: 'None router found'
+        mensage: 'None router found sorry'
     });
 });
 
